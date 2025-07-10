@@ -2,13 +2,21 @@ package com.example.invoicemanager.Invoice;
 
 import java.time.LocalDate;
 
+import com.example.invoicemanager.Approval.Approval;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name = "Invoices")
 public class Invoice {
-    @Id @GeneratedValue
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private String address;
@@ -17,6 +25,10 @@ public class Invoice {
     private LocalDate date;
     private Float itemprice;
     private Integer amount;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "approval_id", referencedColumnName = "id")
+    private Approval approval;
+
 
 
 
@@ -24,7 +36,7 @@ public class Invoice {
 
     public Invoice(){}
 
-    public Invoice(Long id,String name, String address, String number, String item,LocalDate date,Float itemprice,Integer amount){
+    public Invoice(Long id,String name, String address, String number, String item,LocalDate date,Float itemprice,Integer amount,Approval approval){
         this.id = id;
         this.name = name;
         this.address = address;
@@ -33,6 +45,7 @@ public class Invoice {
         this.date = date;
         this.itemprice = itemprice;
         this.amount = amount;
+        this.approval = approval;
     }
 
 
