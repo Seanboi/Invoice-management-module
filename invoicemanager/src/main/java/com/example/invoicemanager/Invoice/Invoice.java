@@ -1,6 +1,7 @@
 package com.example.invoicemanager.Invoice;
-
+import com.example.invoicemanager.DomainObject.DomainObject;
 import java.time.LocalDate;
+
 
 import com.example.invoicemanager.Approval.Approval;
 
@@ -15,9 +16,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "Invoices")
-public class Invoice {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+public class Invoice extends DomainObject{
     private String name;
     private String address;
     private String number;
@@ -34,10 +33,12 @@ public class Invoice {
 
 
 
-    public Invoice(){}
+    public Invoice(Long id){
+        super(id);
+    }
 
     public Invoice(Long id,String name, String address, String number, String item,LocalDate date,Float itemprice,Integer amount,Approval approval){
-        this.id = id;
+        super(id);
         this.name = name;
         this.address = address;
         this.number = number;
@@ -49,13 +50,13 @@ public class Invoice {
     }
 
 
-    public Long getid() {
-        return this.id;
-    }
+    // public Long getid() {
+    //     return this.id;
+    // }
 
-    public void setid(Long id) {
-        this.id = id;
-    }
+    // public void setid(Long id) {
+    //     this.id = id;
+    // }
 
     public String getName() {
         return this.name;

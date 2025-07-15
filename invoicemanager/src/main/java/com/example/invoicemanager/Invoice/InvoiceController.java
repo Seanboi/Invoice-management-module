@@ -28,21 +28,21 @@ public class InvoiceController {
         this.InvoiceService = InvoiceService;
     }
 
-    @GetMapping(path="view")
-    public List<Invoice> getInvoices(){
-        return InvoiceService.getInvoice();
-    }
+    // @GetMapping(path="view")
+    // public List<Invoice> getInvoices(){
+    //     return InvoiceService.getInvoice();
+    // }
 
-    @PostMapping(path="create")
-    public void createInvoice(@RequestBody Invoice Invoice){
-        InvoiceService.createInvoice(Invoice);
+    // @PostMapping(path="create")
+    // public void createInvoice(@RequestBody Invoice Invoice){
+    //     InvoiceService.createInvoice(Invoice);
 
-    }
+    // }
 
-    @DeleteMapping(path="delete/{id}")
-        public void deleteInvoice(@PathVariable("id") Long id){
-            InvoiceService.deleteInvoice(id);
-        }
+    // @DeleteMapping(path="delete/{id}")
+    //     public void deleteInvoice(@PathVariable("id") Long id){
+    //         InvoiceService.deleteInvoice(id);
+    //     }
     
 
     }
