@@ -24,8 +24,6 @@ public class Invoice extends DomainObject{
     private LocalDate date;
     private Float itemprice;
     private Integer amount;
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "approval_id", referencedColumnName = "id")
     private Approval approval;
 
 

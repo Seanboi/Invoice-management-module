@@ -16,6 +16,10 @@ public class InvoiceService extends DomainObjectService<Invoice>{
         super(InvoiceRepo);
     }
 
+
+
+    
+
     // @GetMapping
     // public List<Invoice> getInvoice(){
     //     return InvoiceRepo.findAll();

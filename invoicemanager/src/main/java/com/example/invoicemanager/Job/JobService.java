@@ -1,5 +1,7 @@
 package com.example.invoicemanager.Job;
 
+import java.util.Optional;
+
 import org.springframework.stereotype.Service;
 
 import com.example.invoicemanager.DomainObject.DomainObjectService;
@@ -12,4 +14,6 @@ public class JobService extends DomainObjectService<Job> {
     public JobService(JobRepo JobRepo){
         super(JobRepo);
     }
+
+
 }

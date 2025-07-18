@@ -17,9 +17,9 @@ protected final JpaRepository<T,Long> repository;
     }
 
     public T Create(Long id,T object){
-        preCreate(id, object);
+        preCreate(object);
         T saved = repository.save(object);
-        postCreate(id, object);
+        postCreate(object);
         return saved;
     }
 
@@ -27,7 +27,7 @@ protected final JpaRepository<T,Long> repository;
         if (!repository.existsById(id)) {
             throw new IllegalStateException("Object with ID " + id + " does not exist.");
         }
-        preUpdate(id, object);
+        preUpdate(id,object);
         T saved = repository.save(object);
         postUpdate(saved); 
         return saved;
@@ -41,18 +41,18 @@ protected final JpaRepository<T,Long> repository;
         T obj = existing.get();
         preDelete(id);
         repository.deleteById(id);
-        postDelete(id,obj);
+        postDelete(obj);
     }
 
     //Hook points
-    protected void preCreate(Long id, T object) {}
-    protected void postCreate(Long id, T object) {}
+    protected void preCreate(T object) {}
+    protected void postCreate(T object) {}
 
     protected void preUpdate(Long id, T object) {}
     protected void postUpdate(T object) {}
 
     protected void preDelete(Long id) {}
-    protected void postDelete(Long id, T deletedObject) {}
+    protected void postDelete(T deletedObject) {}
 
 
 
