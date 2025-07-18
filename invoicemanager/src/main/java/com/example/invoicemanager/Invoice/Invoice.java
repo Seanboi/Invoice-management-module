@@ -2,7 +2,7 @@ package com.example.invoicemanager.Invoice;
 import com.example.invoicemanager.DomainObject.DomainObject;
 import java.time.LocalDate;
 
-
+import com.example.invoicemanager.Approval.Approvable;
 import com.example.invoicemanager.Approval.Approval;
 
 import jakarta.persistence.CascadeType;
@@ -16,6 +16,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "Invoices")
+@Approvable
 public class Invoice extends DomainObject{
     private String name;
     private String address;

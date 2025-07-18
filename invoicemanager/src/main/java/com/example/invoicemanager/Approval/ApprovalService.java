@@ -63,6 +63,11 @@ public class ApprovalService extends DomainObjectService<Approval> implements Ap
         return repository.save(approval);
     }
 
+    public boolean requiresApproval(Class<?> clazz) {
+        return clazz.isAnnotationPresent(Approvable.class);
+}
+
+
 
 
     
