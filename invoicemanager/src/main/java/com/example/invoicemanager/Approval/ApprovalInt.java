@@ -10,10 +10,13 @@ import com.example.invoicemanager.Approval.Approval.ApprovalStatus;
 
 public interface ApprovalInt {
 
-    Approval createApprovalRequest(Long id,ApprovalStatus approval,LocalDateTime requestedAt,String ObjectType,Long Objectid,String tempjson);
-    Optional<Approval> getApprovalRequest(Long id);
+    Approval createApprovalRequest(Long id,ApprovalStatus approval,LocalDateTime requestedAt,String ObjectType,String tempjson);
+    void deleteApprovalRequest(Long id);
+    List<Approval> getApprovalRequests();
     List<Approval> getPendingApprovals();
-    List<Approval> getApprovalsByObject(String ObjectType, Long Objectid);
+    List<Approval> getApprovedApprovals();
+    List<Approval> getRejectedApprovals();
+    List<Approval> getApprovalsByObject(String ObjectType);
     Approval ApproveRequest(Long approvalRequestId);
     Approval RejectRequest(Long approvalRequestId);
     

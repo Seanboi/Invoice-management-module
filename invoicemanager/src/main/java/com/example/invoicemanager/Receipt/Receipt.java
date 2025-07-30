@@ -12,8 +12,8 @@ import jakarta.persistence.Table;
 @Approvable
 public class Receipt extends DomainObject {
 
-    public Receipt(Long id){
-        super(id);
+    public Receipt(){
+        super(null);
     }
     
 }

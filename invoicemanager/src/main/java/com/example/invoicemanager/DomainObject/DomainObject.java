@@ -1,11 +1,20 @@
 package com.example.invoicemanager.DomainObject;
 
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.MappedSuperclass;
 
- public abstract class DomainObject {
+@MappedSuperclass
+public abstract class DomainObject {
 
-    long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    Long id;
 
-    public DomainObject(long id){
+     public DomainObject(){}
+
+    public DomainObject(Long id){
         this.id = id;
     }
 

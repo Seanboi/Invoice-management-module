@@ -10,7 +10,9 @@ public interface ApprovalRepo extends JpaRepository<Approval,Long>{
     
     List<Approval> findByApproval(ApprovalStatus approval);
 
-    List<Approval> findByObjectType(String objectType, Long objectId);
+    List<Approval> findByObjectType(String objectType);
+
+    
 
 
 }

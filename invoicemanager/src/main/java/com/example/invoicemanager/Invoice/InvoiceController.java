@@ -6,6 +6,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -33,11 +36,11 @@ public class InvoiceController {
     //     return InvoiceService.getInvoice();
     // }
 
-    // @PostMapping(path="create")
-    // public void createInvoice(@RequestBody Invoice Invoice){
-    //     InvoiceService.createInvoice(Invoice);
+    @PostMapping(path="/invoice/create")
+    public Invoice Create(@RequestBody Invoice Invoice) throws JsonProcessingException{
+        return InvoiceService.Create(Invoice);
 
-    // }
+    }
 
     // @DeleteMapping(path="delete/{id}")
     //     public void deleteInvoice(@PathVariable("id") Long id){

@@ -11,8 +11,8 @@ import jakarta.persistence.Table;
 @Approvable
 public class Job extends DomainObject {
 
-    public Job(Long id){
-        super(id);
+    public Job(){
+        super(null);
     }
     
 }

@@ -12,8 +12,8 @@ import jakarta.persistence.Table;
 @Approvable
 public class CreditNote extends DomainObject {
 
-    public CreditNote(Long id){
-        super(id);
+    public CreditNote(){
+        super(null);
 
     }
     
