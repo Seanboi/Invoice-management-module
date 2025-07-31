@@ -4,6 +4,7 @@ import java.time.LocalDate;
 
 import com.example.invoicemanager.Approval.Approvable;
 import com.example.invoicemanager.Approval.Approval;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
@@ -22,7 +23,8 @@ public class Invoice extends DomainObject{
     private String address;
     private String number;
     private String item;
-    private LocalDate date;
+    @JsonFormat(pattern = "yyyy-MM-dd")
+    private String date;
     private Float itemprice;
     private Integer amount;
     
@@ -37,7 +39,7 @@ public class Invoice extends DomainObject{
         super();
     }
 
-    public Invoice(Long id,String name, String address, String number, String item,LocalDate date,Float itemprice,Integer amount,boolean approvable){
+    public Invoice(Long id,String name, String address, String number, String item,String date,Float itemprice,Integer amount,boolean approvable){
         super(id,approvable);
         this.name = name;
         this.address = address;
@@ -91,11 +93,11 @@ public class Invoice extends DomainObject{
         this.item = item;
     }
 
-    public LocalDate getDate() {
+    public String getDate() {
         return this.date;
     }
 
-    public void setDate(LocalDate date) {
+    public void setDate(String date) {
         this.date = date;
     }
 

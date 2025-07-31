@@ -3,6 +3,7 @@ package com.example.invoicemanager.Approval;
 import java.time.LocalDateTime;
 
 import com.example.invoicemanager.DomainObject.DomainObject;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -19,6 +20,7 @@ public class Approval extends ApprovalObject {
 
     @Enumerated(EnumType.STRING)
     private ApprovalStatus approval;
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private LocalDateTime requestedAt;
     private String objectType;
     private Long objectId;
