@@ -13,7 +13,7 @@ import jakarta.persistence.Table;
 public class Receipt extends DomainObject {
 
     public Receipt(){
-        super(null);
+        super();
     }
     
 }

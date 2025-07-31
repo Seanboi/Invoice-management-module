@@ -11,11 +11,13 @@ public abstract class DomainObject {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
+    boolean approvable;
 
      public DomainObject(){}
 
-    public DomainObject(Long id){
+    public DomainObject(Long id,boolean approvable){
         this.id = id;
+        this.approvable = approvable;
     }
 
     public Long getid() {
@@ -25,5 +27,16 @@ public abstract class DomainObject {
     public void setid(Long id) {
         this.id = id;
     }
+
+    public boolean isApprovable() {
+        return this.approvable;
+    }
+
+    public void setApprovable(boolean approvable) {
+        this.approvable = approvable;
+    }
+
+    
+
     
 }

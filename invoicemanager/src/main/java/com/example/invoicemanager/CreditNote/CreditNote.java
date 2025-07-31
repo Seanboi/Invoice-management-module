@@ -13,7 +13,7 @@ import jakarta.persistence.Table;
 public class CreditNote extends DomainObject {
 
     public CreditNote(){
-        super(null);
+        super();
 
     }
     

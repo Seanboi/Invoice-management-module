@@ -11,7 +11,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "approvals")
-public class Approval extends DomainObject {
+public class Approval extends ApprovalObject {
 
     public enum ApprovalStatus {
         PENDING, REJECTED, ACCEPTED

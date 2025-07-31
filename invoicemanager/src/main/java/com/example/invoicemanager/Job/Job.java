@@ -12,7 +12,7 @@ import jakarta.persistence.Table;
 public class Job extends DomainObject {
 
     public Job(){
-        super(null);
+        super();
     }
     
 }

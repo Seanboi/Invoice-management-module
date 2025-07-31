@@ -25,6 +25,7 @@ public class Invoice extends DomainObject{
     private LocalDate date;
     private Float itemprice;
     private Integer amount;
+    
    
 
 
@@ -33,11 +34,11 @@ public class Invoice extends DomainObject{
 
 
     public Invoice(){
-        super(null);
+        super();
     }
 
-    public Invoice(Long id,String name, String address, String number, String item,LocalDate date,Float itemprice,Integer amount){
-        super(id);
+    public Invoice(Long id,String name, String address, String number, String item,LocalDate date,Float itemprice,Integer amount,boolean approvable){
+        super(id,approvable);
         this.name = name;
         this.address = address;
         this.number = number;
@@ -45,6 +46,7 @@ public class Invoice extends DomainObject{
         this.date = date;
         this.itemprice = itemprice;
         this.amount = amount;
+        
         
     }
 

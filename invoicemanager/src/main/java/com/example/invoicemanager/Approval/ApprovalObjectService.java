@@ -1,10 +1,10 @@
 package com.example.invoicemanager.Approval;
 import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
-import com.example.invoicemanager.DomainObject.DomainObject;
 
 
-public abstract class ApprovalObjectService<T extends DomainObject> {
+
+public abstract class ApprovalObjectService<T extends ApprovalObject> {
 
 protected final JpaRepository<T,Long> repository;
 
