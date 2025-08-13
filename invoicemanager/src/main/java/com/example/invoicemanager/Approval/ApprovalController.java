@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 
 
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping(path="api/v1/Approval")
 public class ApprovalController {

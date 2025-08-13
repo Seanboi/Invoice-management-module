@@ -30,7 +30,7 @@ public class InvoiceService extends DomainObjectService<Invoice>{
         String json = mapper.writeValueAsString(object);
         if(ApprovalService.requiresApproval(object.getClass())){
             ApprovalService.createApprovalRequest(
-                object.getid(), ApprovalStatus.PENDING,LocalDateTime.now(),object.getClass().getName(),json);
+                object.getid(), ApprovalStatus.PENDING,LocalDateTime.now(),object.getClass().getSimpleName(),json);
         }
         Invoice saved = repository.save(object);
         postCreate(object);
