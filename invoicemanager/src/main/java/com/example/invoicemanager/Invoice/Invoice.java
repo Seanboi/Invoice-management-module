@@ -23,7 +23,7 @@ public class Invoice extends DomainObject{
     private String address;
     private String number;
     private String item;
-    @JsonFormat(pattern = "yyyy-MM-dd")
+    @JsonFormat(pattern = "YYYY-MM-DDTHH:mm:ss.sssZ")
     private String date;
     private Float itemprice;
     private Integer amount;
